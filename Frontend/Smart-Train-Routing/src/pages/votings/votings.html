@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Smart Train Routing</ion-title>
+    <!-- Knopf zum erneuten Laden des Graphen, sowie der Kommentare -->
+    <ion-buttons end *ngIf="wetterIcon">
+      <img src="http://openweathermap.org/img/w/{{wetterIcon}}.png">
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+    <div *ngFor="let x of routen">
+      <div>
+        <ion-card text-wrap (click)="detail(x)" class="voting_card">
+          <ion-card-content>
+            <h2 class="head"><b>{{x.routenName}}</b></h2>
+            <!-- <h5 class ="second_head"><ion-icon ios="ios-person" md="md-person" class="time_icon"></ion-icon> {{x.creator}}</h5> -->
+            <h5 class ="second_head"> <ion-icon ios="ios-subway" md="md-subway"></ion-icon> {{x.startBf}} - {{x.endBf}}</h5>
+            <h5 class ="second_head"> <ion-icon ios="ios-time-outline" md="md-time" class="time_icon"></ion-icon>{{x.startDatum}} um {{x.startZeit}}</h5>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+
+  <ion-fab bottom right class="fab-add-right-bottom">
+    <button ion-fab (click)="add()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

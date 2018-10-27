@@ -1,0 +1,7 @@
+{
+  "name": "MoodDetection-Service",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

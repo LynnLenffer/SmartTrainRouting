@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Abstimmung erstellen
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+  <ion-card text-wrap class="votegroup_add_card">
+    <ion-card-content>
+      <ion-item>
+        <ion-label>
+
+          <!-- <h1 class="create_votegroup_header">Erstelle eine neue Abstimmung!</h1> -->
+
+          <ion-item>
+            <ion-label  stacked  class="text_iput"><h5><b>Wie soll die Abstimmung heißen?</b></h5></ion-label>
+            <ion-input type="text" placeholder="Name..." [(ngModel)]="valueName" class="text_input"></ion-input>
+          </ion-item>
+          <!--
+          <ion-item>
+            <ion-label  stacked  class="text_iput"><b>Wie heißt die angehörige Gruppe?</b></ion-label>
+            <ion-input type="text" placeholder="Gruppe..." [(ngModel)]="valueGroup" class="text_input"></ion-input>
+          </ion-item>
+          -->
+
+          <ion-item>
+            <ion-label><h5><b>Mehrfache Stimmabgabe</b></h5></ion-label>
+            <ion-toggle [(ngModel)]="multipleVoting"></ion-toggle>
+          </ion-item>
+
+          <ion-item>
+            <ion-label  stacked  class="text_iput"><h5><b>Wer darf teilnehmen?</b></h5></ion-label>
+            <ion-select [(ngModel)]="teilnehmer" placeholder="Teilnehmer..." interface="popover">
+              <ion-option value="fb">Fachbereich</ion-option>
+              <ion-option value="all">Alle</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <table>
+            <tr>
+              <td><ion-item>
+                <ion-label stacked class="text_iput"><h5><b>Start</b></h5></ion-label>
+                <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="D MMM YYYY" placeholder="01.01.2018" max="2020" min="2018"  [(ngModel)]="startdate"></ion-datetime>
+              </ion-item></td>
+              <td> <ion-item>
+                <ion-label stacked class="text_iput"><h5><b>Ende</b></h5></ion-label>
+                <ion-datetime displayFormat="DD.MM.YYYY" pickerFormat="D MMM YYYY" placeholder="31.12.2018" max="2020" min="2018"  [(ngModel)]="enddate"></ion-datetime>
+              </ion-item></td>
+            </tr>
+          </table>
+
+
+
+        </ion-label>
+
+      </ion-item>
+
+      <button ion-button full (click)="create()" class="vote_button">Erstellen</button>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

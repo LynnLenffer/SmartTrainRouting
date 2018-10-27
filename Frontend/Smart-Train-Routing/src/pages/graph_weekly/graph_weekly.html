@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Stimmungsverlauf
+    </ion-title>
+    <!-- Knopf zum erneuten Laden des Graphen, sowie der Kommentare -->
+    <ion-buttons end>
+        <button (click)="refreshPage()" ion-button icon-only>
+            <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+    <!-- Segment Navigator -->
+    <div padding>
+        <ion-segment [(ngModel)]="site" class="segment_button">
+            <ion-segment-button value="graphen">
+                Graph
+            </ion-segment-button>
+            <ion-segment-button value="kommentare">
+                Kommentare
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <!-- Segment Container -->
+    <div [ngSwitch]="site">
+        <!-- Graphen Segment -->
+      <ion-list *ngSwitchCase="'graphen'">
+        <ion-card class="graph_card">
+          <ion-card-content>
+
+                <!--  Graph Ausgabe -->
+                <div style="display: block;" *ngIf="show">
+                    <canvas baseChart min-width="200" min-height="300"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [colors]="lineChartColors"
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType"
+                            ></canvas>
+                </div>
+          </ion-card-content>
+        </ion-card >
+
+            <!-- Graphen Daten in einer Tabelle geordnet -->
+
+          <ion-card class="table_card">
+            <ion-card-content>
+              <h5><b>Tabelle:</b></h5>
+              <table class="stats_table">
+                  <tr class="table_th">
+                      <th>KW</th>
+                      <th>&#216;-Stimmung</th>
+                      <!--
+                      <th>Max</th>
+                      <th>Min</th>
+                      -->
+                      <th>Stimmen</th>
+                  </tr>
+                  <tr>
+                    <th>-</th>
+                    <th>{{avg}}</th>
+                    <!--
+                    <th>{{max}}</th>
+                    <th>{{min}}</th>
+                    -->
+                    <th>{{anz}}</th>
+                  </tr>
+                  <tr *ngFor="let x of result" text-center>
+                      <td>{{x.kw}}</td>
+                      <td>{{x.median}}</td>
+                    <!--
+                      <td>{{x.max}}</td>
+                      <td>{{x.min}}</td>
+                      -->
+                      <td>{{x.anz}}</td>
+                  </tr>
+              </table>
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+        <!-- Kommentar Segment -->
+        <ion-list *ngSwitchCase="'kommentare'">
+          <ion-card *ngFor="let x of reasonsData" class="comment_card">
+            <ion-card-content *ngIf="x.reason != null && x.reason != '' && x.reason != ' '">
+              <h5 class="comment_header"><small><ion-icon ios="ios-sunny" md="md-sunny"></ion-icon></small> <b>{{x.mood}}</b> <small class="comment_date">{{x.date}}</small></h5>
+              {{x.reason}}
+            </ion-card-content>
+          </ion-card>
+        </ion-list>
+    </div>
+
+</ion-content>

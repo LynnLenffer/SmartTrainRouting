@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Share:700i');
+page-home {
+
+}
+
+
+.content_page{
+  background-color: #EEEEEE;
+
+}
+
+
+.votegroup_creator{
+  color: #969595;
+  float: right;
+}
+
+.voting_card{
+  color: black;
+  border-radius: 10px;
+
+}
+
+.voting_card_weekly{
+  color: black;
+  border-radius: 10px;
+
+  //0,115,170
+}
+
+.voting_card:active {
+  font-color: white !important;
+  color: white !important;
+  background-color: #0073AA;
+}
+
+.time_icon{
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.head{
+  text-align: left;
+  padding-bottom: 8px;
+  font-family: 'Share';
+}
+
+.second_head{
+  margin-top: 15em;
+  padding-top: 5px;
+  color: #5f5f5f;
+}
+
+.fab_button{
+  background-color: #0073AA;
+  margin-bottom: 50px;
+}
+
+.fab_button_icon{
+  color: #ffffff;
+}
+//-----------
+//Vote-page
+//-----------
+
+

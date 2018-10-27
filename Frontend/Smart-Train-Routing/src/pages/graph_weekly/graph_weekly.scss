@@ -1,0 +1,46 @@
+page-about {
+}
+
+.stats_table{
+  width: 100%;
+}
+
+/* Tabellen Einf�rbung */
+tbody tr:nth-child(odd) {
+   background-color: #f2f2f2;
+}
+
+.content_page{
+  background-color: #EEEEEE;
+}
+
+.segment_button{
+  color: #0073AA;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.table_card{
+  border-radius: 10px;
+}
+
+.graph_card{
+  border-radius: 10px;
+}
+
+.comment_card{
+  border-radius: 10px;
+}
+
+.comment_header{
+  color: #0073AA;
+  padding-bottom: 5px;
+}
+
+.comment_date{
+  float: right;
+}
+
+.table_th{
+
+}

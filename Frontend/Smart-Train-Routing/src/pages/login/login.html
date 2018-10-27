@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mood Detection App</ion-title>
+    <!--
+      <ion-buttons end>
+        <button (click)="showSettings()" ion-button icon-only >
+          <ion-icon name="md-settings" class="setting_button_icon"></ion-icon>
+        </button>
+      </ion-buttons>
+     -->
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+
+  <div class="login-box">
+
+    <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-67>
+        <img src="https://www.mt-ag.com/wp-content/uploads/2016/06/mtag-logo.jpg"/>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <form (ngSubmit)="login()" #registerForm="ngForm" class="login-form">
+      <ion-row>
+        <ion-col>
+
+          <ion-input  type="text" placeholder="Username" name="username" required [(ngModel)]="username_input"></ion-input>
+          <ion-input  type="password" placeholder="Password" name="password"  required [(ngModel)]="password_input"></ion-input>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class="keepLoggedIn"><ion-checkbox [(ngModel)]="keepLogin" name="check_keep_login" disabled="false"></ion-checkbox>Remember me</div>
+      </ion-row>
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" >Login</button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>

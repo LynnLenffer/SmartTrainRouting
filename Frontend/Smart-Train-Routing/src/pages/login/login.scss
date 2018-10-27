@@ -1,0 +1,78 @@
+page-login {
+
+  .login-content {
+    background: #0073AA;
+    //background-color: #EEEEEE;
+
+    .setting_button_icon{
+      color: #ffffff;
+    }
+
+    .logo-row {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+
+    .login-box {
+      background: #ffffff;
+      padding: 20px 20px 0px 20px;
+      margin-top: 75px;
+      border-radius: 10px;
+    }
+
+    .login-form{
+      margin: 0px 16px 0px 16px;
+    }
+
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+
+    ion-input {
+      color: black;
+      border-radius: 50px;
+      padding-left: 30px !important;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      border: 0px !important;
+      box-shadow: none !important;
+      background-color: #f2f2f2;
+    }
+
+    .text-input::-moz-placeholder {
+      color: black;
+    }
+
+
+    .signup-col {
+      padding-bottom: 20px;
+    }
+
+    .item-inner {
+      border: 0;
+      box-shadow: none !important;
+    }
+
+    .submit-btn {
+      background: #0073AA;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .keepLoggedIn{
+      color: #969595;
+
+      margin-bottom: 10px;
+      float: left;
+      margin-left: 10px;
+    }
+
+    ion-checkbox{
+      top: 3px;
+      margin-right: 8px;
+    }
+
+  }
+
+}

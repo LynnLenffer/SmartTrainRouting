@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      QR Code
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+  <ion-card *ngIf="createdCode" class="qr_card">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+  </ion-card>
+
+</ion-content>

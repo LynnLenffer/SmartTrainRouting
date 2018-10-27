@@ -1,0 +1,86 @@
+page-home {
+
+}
+
+.content_page{
+  color: black;
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.fixed-content{
+  margin-bottom: 0px;
+}
+
+.content_page{
+  background-color: #EEEEEE;
+  display: flex;
+  margin-bottom: 0px;
+}
+
+.votegroup_id{
+  float: right;
+}
+
+.vote_card{
+  border-radius: 10px;
+  margin-top: 2vh;
+  text-align: center;
+  padding: -50px;
+  align-items: center;
+  align-content: center;
+}
+
+.under_head{
+  color: #969595;
+}
+
+.vote_bar{
+  color: #0073AA;
+}
+
+bar_items{
+  color: #0073AA;
+}
+
+.vote_button{
+  background: #0073AA;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+
+.text_iput{
+  margin-top: 20px;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: left;
+}
+h4{
+  text-align: center;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.footer{
+  background-color: white;
+  display: flex;
+}
+
+.alternativ-infos{
+  font-size: smaller;
+  color: white;
+  margin-left: 1em;
+}
+
+.alternativ-infos-header{
+  font-size: larger;
+  color: white;
+  margin-left: 0.8em;
+}

@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+
+      <!-- Titel der page -->
+      <ion-title >
+        {{votingInfo.name}}
+      </ion-title>
+
+      <!-- Knopf zum erneuten Laden des Graphen, sowie der Kommentare -->
+      <ion-buttons end>
+        <button (click)="refreshPage()" ion-button icon-only>
+          <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+        </button>
+      </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+  <!-- Segment Navigator -->
+  <div padding>
+    <ion-segment [(ngModel)]="site" class="segment_button">
+      <ion-segment-button value="graphen">
+        Graph
+      </ion-segment-button>
+      <ion-segment-button value="kommentare">
+        Kommentare
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <!-- Segment Container -->
+  <div [ngSwitch]="site">
+    <!-- Graphen Segment -->
+    <ion-list *ngSwitchCase="'graphen'">
+
+      <!-- Tabelle -->
+
+      <ion-card class="table_card">
+        <ion-card-content>
+          <table class="stats_table">
+            <tr class="table_th">
+              <th>&#216;-Stimmung</th>
+              <th>Abgegebene Stimmen</th>
+            </tr>
+            <tr>
+              <th>{{avg}}</th>
+              <th>{{anz}}</th>
+            </tr>
+          </table>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Graph -->
+
+      <ion-card class="graph_card_bar">
+        <ion-card-content>
+
+          <!--  Graph Ausgabe -->
+          <div style="display: block;" *ngIf="show" style="height: 50vh">
+            <canvas baseChart min-width="200"
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [colors]="barChartColors"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+            ></canvas>
+          </div>
+        </ion-card-content>
+      </ion-card >
+
+    </ion-list>
+    <!-- Kommentar Segment -->
+    <ion-list *ngSwitchCase="'kommentare'">
+      <ion-card *ngFor="let x of reasonsData" class="comment_card">
+        <ion-card-content *ngIf="x.reason != null && x.reason != '' && x.reason != ' '">
+          <h5 class="comment_header"><small><ion-icon ios="ios-sunny" md="md-sunny"></ion-icon></small> <b>{{x.mood}}</b> <small class="comment_date">{{x.date}} </small></h5>
+          {{x.reason}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+
+</ion-content>

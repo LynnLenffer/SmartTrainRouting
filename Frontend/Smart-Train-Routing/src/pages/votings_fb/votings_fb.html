@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Abstimmungen</ion-title>
+    <!-- Knopf zum erneuten Laden des Graphen, sowie der Kommentare -->
+    <ion-buttons end>
+      <button (click)="refreshPage()" ion-button icon-only>
+        <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- Knopf zum erneuten Laden des Graphen, sowie der Kommentare -->
+    <ion-buttons end>
+      <button (click)="logout()" ion-button icon-only>
+        <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content_page">
+
+  <div *ngFor="let x of votegroupdata">
+    <!-- Wenn keine wöchentliche Abstimmung -->
+    <ion-card text-wrap *ngIf="x.category != 'weekly'" (click)="showGraph(x.id, x.votename, x.category, x.creator, x.startdate, x.enddate)" class="voting_card">
+      <ion-card-content>
+        <h2 class="head"><b>{{x.votename}}</b></h2>
+        <br>
+        <!-- <h5 class ="second_head"><ion-icon ios="ios-person" md="md-person" class="time_icon"></ion-icon> {{x.creator}}</h5> -->
+        <h5 class ="second_head"> <ion-icon ios="ios-time-outline" md="md-time" class="time_icon"></ion-icon>{{x.startdate}} - {{x.enddate}}</h5>
+      </ion-card-content>
+    </ion-card>
+    <!-- Wenn wöchentliche Abstimmung -->
+    <ion-card text-wrap *ngIf="x.category == 'weekly'" (click)="showGraph(x.id, x.votename, x.category, x.creator, x.startdate, x.enddate)" class="voting_card_weekly">
+      <ion-card-content>
+        <h2 class="head"><b>{{x.votename}} </b></h2>
+        <br>
+        <!-- <h5 class ="second_head"><ion-icon ios="ios-person" md="md-person" class="time_icon"></ion-icon> {{x.creator}}</h5> -->
+        <h5 class ="second_head"> <ion-icon ios="ios-time-outline" md="md-time" class="time_icon"></ion-icon>{{x.startdate}} - {{x.enddate}} <ion-icon ios="ios-repeat" md="md-repeat" style="float: right"></ion-icon> </h5>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
